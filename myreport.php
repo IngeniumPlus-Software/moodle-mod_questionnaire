@@ -130,6 +130,10 @@ switch ($action) {
         break;
 
     case 'vresp':
+      $questionnaire->page->add_to_page('answerlink',
+        '<a href="'.$CFG->wwwroot.htmlspecialchars('/mod/questionnaire/complete.php?' .
+          'id=' . $questionnaire->cm->id) . '" class="btn btn-primary">' .
+        get_string('answerquestions', 'questionnaire') . '</a>');
         if (empty($questionnaire->survey)) {
             print_error('surveynotexists', 'questionnaire');
         }
