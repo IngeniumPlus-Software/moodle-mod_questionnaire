@@ -45,6 +45,7 @@ class viewpage implements \renderable, \templatable {
         } else {
             $this->data = new \stdClass();
         }
+        $this->data->user_is_admin = is_siteadmin();
     }
 
     /**
